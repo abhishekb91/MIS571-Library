@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Library_AbhishekBhandari</string>
+    <string name="welcome">Welcome to AbhishekBhandari Library</string>
+    <string name="goCheckOut_btn">Check Out</string>
+    <string name="title_query">Query</string>
+    <string name="goDoQuery_btn">Do Query</string>
+    <string name="query_prompt">Choose a query</string>
+    <string name="showresult_btn">Show Result</string>
+    <string name="goBack_btn">Back to Main Page</string>
+    <string-array name="query_array">
+        <item>Query 1</item>
+        <item>Query 2</item>
+        <item>Query 3</item>
+        <item>Query 4</item>
+        <item>Query 5</item>
+        <item>Query 6</item>
+        <item>Query 7</item>
+    </string-array>
 </resources>

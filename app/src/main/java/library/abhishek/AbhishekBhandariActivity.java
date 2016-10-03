@@ -15,6 +15,7 @@ public class AbhishekBhandariActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abhishekbhandari_layout);
+        //setContentView(R.layout.query_abhishekbhandari_layout);
 
         //copy database file
         try{
@@ -23,11 +24,11 @@ public class AbhishekBhandariActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         //implement SQL query and get cursor of resultset
-        Cursor cursor = DBOperator.getInstance().execQuery(SQLCommand.QUERY_STUDENT);
+        /*Cursor cursor = DBOperator.getInstance().execQuery(SQLCommand.QUERY_STUDENT);
         TableView tableView = new TableView(this, cursor);
         //show data in tableview
         ScrollView scrollView = (ScrollView)this.findViewById(R.id.scrollView);
-        scrollView.addView(tableView);
+        scrollView.addView(tableView);*/
 
     }
 }
