@@ -1,13 +1,13 @@
 package library.abhishek;
 
-import library.abhishek.constant.SQLCommand;
-import library.abhishek.view.TableView;
+//import library.abhishek.constant.SQLCommand;
+//import library.abhishek.view.TableView;
 import library.abhishek.util.DBOperator;
 
 import android.support.v7.app.AppCompatActivity;
-import android.database.Cursor;
+//import android.database.Cursor;
 import android.os.Bundle;
-import android.widget.ScrollView;
+//import android.widget.ScrollView;
 
 public class AbhishekBhandariActivity extends AppCompatActivity {
 
