@@ -8,12 +8,12 @@
     <string name="showresult_btn">Show Result</string>
     <string name="goBack_btn">Back to Main Page</string>
     <string-array name="query_array">
-        <item>Query 1</item>
-        <item>Query 2</item>
-        <item>Query 3</item>
-        <item>Query 4</item>
-        <item>Query 5</item>
-        <item>Query 6</item>
-        <item>Query 7</item>
+        <item>Query: LIST OF ALL BOOKS</item>
+        <item>Query: CALL NUMBERS OF BOOK \'Database Management\'</item>
+        <item>Query: LIST OF ALL STUDENTS</item>
+        <item>Query: BOOK DETAILS OF \'Fifth Discipline\'</item>
+        <item>Query: BOOKS ISSUED BY STUDENT #111</item>
+        <item>Query: STUDENTS WHO HAVE CHECKED OUT BOOKS</item>
+        <item>Query: BOOK DETAILS OF \'Software Engineering\'</item>
     </string-array>
 </resources>
