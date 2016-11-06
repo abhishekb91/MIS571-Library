@@ -1,0 +1,94 @@
+package library.abhishek;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import library.abhishek.constant.SQLCommand;
+import library.abhishek.util.DBOperator;
+
+/**
+ * Created by abhis on 10/30/2016.
+ */
+
+public class CheckoutActivity extends AppCompatActivity {
+    EditText stuIdEdit, bookIdEdit;
+    DatePicker datePicker;
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.checkout_abhishekbhandari);
+
+        stuIdEdit = (EditText) this.findViewById(R.id.studentID_edittext);
+        bookIdEdit = (EditText) this.findViewById(R.id.bookID_edittext);
+        datePicker = (DatePicker) this.findViewById(R.id.datePicker1);
+    }
+
+    /**
+     * This function gets called once user presses checkout btn.
+     * It is used to check out a book by user
+     *
+     * @param view
+     */
+    public void onCheckoutBtnClick(View view) {
+        //Check out a book
+        DBOperator.getInstance().execSQL(SQLCommand.CHECK_BOOK, this.getArgs(true));
+        Toast.makeText(getBaseContext(), "Checkout successfully", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * This function gets called once user presses return btn.
+     * It is used to return a book by user
+     *
+     * @param view
+     */
+    public void onReturnBtnClick(View view) {
+        //Return a book
+        DBOperator.getInstance().execSQL(SQLCommand.RETURN_BOOK, this.getArgs(false));
+        Toast.makeText(getBaseContext(), "Return successfully", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * This function is used to go back to home page
+     *
+     * @param view
+     */
+    public void goHomePage(View view) {
+        //go back to main screen
+        finish();
+    }
+
+    /**
+     * Get input data
+     * including studentID, book callnum, date and returned state
+     *
+     * @param isCheckout
+     * @return
+     */
+    private String[] getArgs(boolean isCheckout) {
+        String args[] = new String[4];
+        //stid
+        args[0] = stuIdEdit.getText().toString();
+        //callnum
+        args[1] = bookIdEdit.getText().toString();
+        //date
+        int year = datePicker.getYear();
+        int month = datePicker.getMonth();
+        int day = datePicker.getDayOfMonth();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, day);
+        //format the date
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        args[2] = dateFormat.format(calendar.getTime());
+        if (isCheckout) args[3] = "N";
+        else args[3] = "Y";
+        return args;
+    }
+
+}

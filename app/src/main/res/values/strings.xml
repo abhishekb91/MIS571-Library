@@ -6,7 +6,15 @@
     <string name="goDoQuery_btn">Do Query</string>
     <string name="query_prompt">Choose a query</string>
     <string name="showresult_btn">Show Result</string>
-    <string name="goBack_btn">Back to Main Page</string>
+    <string name="title_checkout"><![CDATA[Check Out & Return]]></string>
+    <string name="studentID">Student ID</string>
+    <string name="bookID">Book ID</string>
+    <string name="date">Date</string>
+    <string name="checkout_btn">Check Out</string>
+    <string name="return_btn">Return</string>
+    <string name="summary_btn">Summary</string>
+    <string name="goBack_btn">Back To Main Menu</string>
+
     <string-array name="query_array">
         <item>Query: LIST OF ALL BOOKS</item>
         <item>Query: CALL NUMBERS OF BOOK \'Database Management\'</item>

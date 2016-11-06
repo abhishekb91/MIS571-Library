@@ -37,4 +37,14 @@ public abstract class SQLCommand {
             "FROM Student s, CheckOut c " +
             "WHERE s.stid = c.stid " +
             "GROUP BY s.stid";
+
+    //Updating book query
+    public static String RETURN_BOOK = "UPDATE checkout " +
+            "SET coreturned=? " +
+            "WHERE stid=? " +
+            "AND lbcallnum=?";
+
+    //Insert into checkout table
+    public static String CHECK_BOOK = "INSERT INTO checkout(stid,lbcallnum,coduedate,coreturned) " +
+            "VALUES(?,?,?,?)";
 }
