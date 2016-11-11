@@ -55,4 +55,8 @@ public abstract class SQLCommand {
             "GROUP BY month " +
             "ORDER BY total desc";
 
+    public static String CHECKOUT_LIST = "SELECT checkout.stid as _id, lbtitle, coduedate,coreturned,cofine,stname " +
+            "FROM checkout,student,libbook " +
+            "WHERE student.stid=checkout.stid " +
+            "AND libbook.lbcallnum=checkout.lbcallnum";
 }

@@ -15,7 +15,10 @@
     <string name="summary_btn">Summary</string>
     <string name="goBack_btn">Back To Main Menu</string>
     <string name="checkoutlist_btn">Show Checkout List</string>
-
+    <string name="title_checkoutlist">Check Out Record</string>
+    <string name="stname">Name</string>
+    <string name="coreduedate">Due Date</string>
+    <string name="lbtitle">Book Title</string>
     <string-array name="query_array">
         <item>Query: LIST OF ALL BOOKS</item>
         <item>Query: CALL NUMBERS OF BOOK \'Database Management\'</item>

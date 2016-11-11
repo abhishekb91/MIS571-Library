@@ -4,6 +4,7 @@ import library.abhishek.constant.SQLCommand;
 import library.abhishek.util.DBOperator;
 import library.abhishek.view.TableView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import android.widget.Toast;
  */
 
 public class QueryActivity extends AppCompatActivity {
-    Button backBtn, resultBtn;
+    Button backBtn, resultBtn, showlistBtn;
     Spinner querySpinner;
     ScrollView scrollView;
 
@@ -91,6 +92,17 @@ public class QueryActivity extends AppCompatActivity {
             }
         });
 
+        //Display Result Button
+        showlistBtn = (Button) findViewById(R.id.showcheckoutlist_btn);
+        showlistBtn.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+                 // show checkout list result
+                 String sql = SQLCommand.CHECKOUT_LIST;
+                 Intent intent = new Intent(getApplicationContext(), ShowlistActivity.class);
+                 intent.putExtra("sql", sql);
+                 startActivity(intent);
+             }
+        });
         querySpinner = (Spinner) findViewById(R.id.querylist_spinner);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
     }
