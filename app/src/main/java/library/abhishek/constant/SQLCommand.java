@@ -47,4 +47,12 @@ public abstract class SQLCommand {
     //Insert into checkout table
     public static String CHECK_BOOK = "INSERT INTO checkout(stid,lbcallnum,coduedate,coreturned) " +
             "VALUES(?,?,?,?)";
+
+    //checkout summary
+    public static String CHECKOUT_SUMMARY = "SELECT strftime('%m',coduedate) as month,count(*) as total " +
+            "FROM checkout " +
+            "WHERE strftime('%Y',coduedate)='2011' " +
+            "GROUP BY month " +
+            "ORDER BY total desc";
+
 }

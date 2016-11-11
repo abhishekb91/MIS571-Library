@@ -2,7 +2,11 @@ package library.abhishek;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.LinkedList;
+import java.util.List;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +16,8 @@ import android.widget.Toast;
 
 import library.abhishek.constant.SQLCommand;
 import library.abhishek.util.DBOperator;
+import library.abhishek.view.ChartGenerator;
+import library.abhishek.util.Pair;
 
 /**
  * Created by abhis on 10/30/2016.
@@ -52,6 +58,29 @@ public class CheckoutActivity extends AppCompatActivity {
         //Return a book
         DBOperator.getInstance().execSQL(SQLCommand.RETURN_BOOK, this.getArgs(false));
         Toast.makeText(getBaseContext(), "Return successfully", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * This function gets called when user clicks summary button
+     * @param view
+     */
+    public void onSummaryBtnClick(View view) {
+        Cursor cursor = DBOperator.getInstance().execQuery(
+                SQLCommand.CHECKOUT_SUMMARY);
+        List<Pair> pairList = new LinkedList<Pair>();
+        for (int i = 1; i <= 12; i++) {
+            Pair pair = new Pair(i, 0);
+            pairList.add(pair);
+        }
+        while (cursor.moveToNext()) {
+            int location = Integer.parseInt(cursor.getString(0));
+            pairList.get(location - 1).setNumber(
+                    Double.parseDouble(cursor.getString(1)));
+        }
+        Intent intent = ChartGenerator.getBarChart(getBaseContext(),
+                "Checkout Summary in 2011", pairList);
+        this.startActivity(intent);
+
     }
 
     /**

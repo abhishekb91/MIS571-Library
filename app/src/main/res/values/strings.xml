@@ -14,6 +14,7 @@
     <string name="return_btn">Return</string>
     <string name="summary_btn">Summary</string>
     <string name="goBack_btn">Back To Main Menu</string>
+    <string name="checkoutlist_btn">Show Checkout List</string>
 
     <string-array name="query_array">
         <item>Query: LIST OF ALL BOOKS</item>

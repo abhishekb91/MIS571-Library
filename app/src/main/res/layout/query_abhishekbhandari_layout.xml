@@ -1,48 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:text="@string/title_query"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textSize="22sp"
-        android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:textColor="@color/colorPrimaryDark" />
+        android:text="@string/title_query"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <Spinner
+        android:id="@+id/querylist_spinner"
         android:layout_width="270dp"
         android:layout_height="55dp"
-        android:id="@+id/querylist_spinner"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:prompt="@string/query_prompt"
-        android:entries="@array/query_array"/>
+        android:entries="@array/query_array"
+        android:prompt="@string/query_prompt" />
 
     <Button
-        android:text="@string/showresult_btn"
+        android:id="@+id/showresult_btn"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_gravity="end"
-        android:id="@+id/showresult_btn"
         android:layout_marginEnd="26dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:text="@string/showresult_btn" />
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="260dp"
         android:layout_height="260dp"
-        android:id="@+id/scrollView"
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:text="@string/goBack_btn"
+        android:id="@+id/goBack_btn"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:id="@+id/goBack_btn"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:text="@string/goBack_btn" />
 </LinearLayout>
